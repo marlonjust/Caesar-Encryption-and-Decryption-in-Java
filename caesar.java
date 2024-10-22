@@ -67,13 +67,13 @@ public class caesar {
 		for (int i = 0; i < message.length(); i++) {
 			char zeichen = message.charAt(i); //Zugriff auf Buchstaben der message
 			if (Character.isUpperCase(zeichen)) {
-				int position = alphabetUpper.indexOf(zeichen); //Alphabet wird nach der Position des chars durchsucht, A = 0, D = 3 usw...
+				int position = alphabetUpper.indexOf(zeichen);//Alphabet wird nach der Position des chars durchsucht, A = 0, D = 3 usw...
 				int verschiebung = (position - schluessel) % 26; //Verschiebung -> neue Position im alphabet
 				entschluesselt = entschluesselt + alphabetUpper.charAt(verschiebung); //String wird gefüllt mit den chars an der Stelle "verschiebung"
 			}
 			else if (Character.isLowerCase(zeichen)) {
 				int position = alphabetLower.indexOf(zeichen); //Position von Zeichen aus message im alphabet bspw. a = 0 und d = 3;
-				int verschiebung = (position - schluessel) % 26; //Verschiebung -> neue Position im alphabet
+				int verschiebung = (position - schluessel + 26) % 26; //Verschiebung -> neue Position im alphabet //+26 um negative Zahlen zu verhindern
 				entschluesselt = entschluesselt + alphabetLower.charAt(verschiebung); //String wird gefüllt mit den chars an der Stelle "verschiebung"
 			}
 			else {
