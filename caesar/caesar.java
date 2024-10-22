@@ -13,13 +13,15 @@ public class caesar {
 		String alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		String alphabetLower = "abcdefghijklmnopqrstuvwxyz";
 		
-		System.out.println("(1): Nachricht verschlüsseln\n(2): Nachricht entschlüsseln");
+		System.out.println("(1): Nachricht verschlüsseln");
+		System.out.println("(2): Nachricht entschlüsseln");
 		int auswahl = scan.nextInt();
+		scan.nextLine(); //Beispiel Eingabe: 1 wird zu 1\n und scan.nextLine in Switch-Case funktioniert nicht.
 		
 		switch (auswahl) {
 		case 1: {
 			System.out.print("Bitte Nachricht eingeben: ");
-			String message = scan.next();
+			String message = scan.nextLine();
 			System.out.print("Bitte Schlüssel eingeben: ");
 			int schluessel = scan.nextInt();
 			System.out.println(verschluesseln(alphabetUpper, alphabetLower, message, schluessel));
@@ -27,7 +29,7 @@ public class caesar {
 		}
 		case 2: {
 			System.out.print("Bitte Nachricht eingeben: ");
-			String message = scan.next();
+			String message = scan.nextLine();
 			System.out.print("Bitte Schlüssel eingeben: ");
 			int schluessel = scan.nextInt();
 			System.out.println(entschluesseln(alphabetUpper, alphabetLower, message, schluessel));
@@ -68,7 +70,7 @@ public class caesar {
 			char zeichen = message.charAt(i); //Zugriff auf Buchstaben der message
 			if (Character.isUpperCase(zeichen)) {
 				int position = alphabetUpper.indexOf(zeichen);//Alphabet wird nach der Position des chars durchsucht, A = 0, D = 3 usw...
-				int verschiebung = (position - schluessel) % 26; //Verschiebung -> neue Position im alphabet
+				int verschiebung = (position - schluessel + 26) % 26; //Verschiebung -> neue Position im alphabet //+26 um negative Zahlen zu verhindern
 				entschluesselt = entschluesselt + alphabetUpper.charAt(verschiebung); //String wird gefüllt mit den chars an der Stelle "verschiebung"
 			}
 			else if (Character.isLowerCase(zeichen)) {
