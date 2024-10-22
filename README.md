@@ -17,13 +17,13 @@ The reverse formula is used for decryption:
 This converts the encrypted text back into plain text.
 
 ### Operating instructions
-(1): Nachricht verschlüsseln
+(1): Nachricht verschlüsseln <br />
 (2): Nachricht entschlüsseln
 
 ### Example
-(1): Nachricht verschlüsseln
-(2): Nachricht entschlüsseln
-1
-Bitte Nachricht eingeben: Hello World
-Bitte Schlüssel eingeben: 5
-Mjqqt Btwqi!
+(1): Nachricht verschlüsseln <br />
+(2): Nachricht entschlüsseln <br />
+1 <br /> <br />
+Bitte Nachricht eingeben: Hello World <br />
+Bitte Schlüssel eingeben: 5 <br />
+Mjqqt Btwqi! 
